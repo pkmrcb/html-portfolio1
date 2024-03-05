@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai aur code</title>
+</head>
+<body style="background-color: black;color: aliceblue;">
+    
+</body>
+<script>
+    //creating element
+    const div=document.createElement('div')
+    console.log(div)
+    div.className="pawan"
+    div.id=Math.round(Math.random()*10+1);
+    //custom attribute set karna
+    div.setAttribute("title","genrated tile")
+    div.style.backgroundColor="green"
+    div.style.padding="12px"
+    // div.innerText="pawan kumar mishra"//it will overwrite in the innerText
+    //sometimes we use
+    //texnode create karke div me append karna
+    const addTextNode=document.createTextNode("pawan kumar mishra")
+    div.appendChild(addTextNode)
+    //it will also work same as innerHTML
+    //finally documnet me div ko attach karna
+    document.body.appendChild(div)
+</script>
+</html>

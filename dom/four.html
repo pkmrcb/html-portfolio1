@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body style="background-color: black;color: white;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+    <script>
+        //li create karke ul me ADD Karna
+        //function create lkarna
+        function addLanguage(langname){
+            const li=document.createElement('li');
+            li.innerHTML=`${langname}`
+            document.querySelector('.language').appendChild(li)
+        }
+        addLanguage("pyuthon")
+        addLanguage("ruby")
+        //when we use innerHTML then we have to traverse whole tree
+        //so we apply optimised approach using appenChild
+        function optiAddLang(langname){
+            const li=document.createElement('li')
+            li.appendChild(document.createTextNode(`${langname}`))
+            document.querySelector('.language').appendChild(li)//language class me li child append karna
+        }
+        optiAddLang("nekk")
+        //edit
+        const secondLang=document.querySelector("li:nth-child(2)")//li ke second sibling ko select karna
+        // secondLang.innerHTML="MOJO"
+        // secondLang.appendChild(document.createTextNode("MOJO"))//USIME append kar dega na ki overwrite karega
+        //by replacing 
+        const newLi=document.createElement('li')
+        newLi.textContent="pawan"
+        secondLang.replaceWith(newLi)//replacind secondLang with newLi
+        //edit
+        const firstchild=document.querySelector("li:first-child")//it will select firstchild
+        //we can repalce its outer HTML directly
+        firstchild.outerHTML='<li>TypeScript</li>'
+        //remove
+        const lastLang=document.querySelector("li:last-child")
+        lastLang.remove()
+    </script>
+    
+</body>
+</html>
